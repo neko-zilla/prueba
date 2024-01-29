@@ -18,10 +18,11 @@ class Server {
     this.io = socketio(this.server,{/*Configuraciones */});
   }
   middlewares(){
+       //cords
+       this.app.use(cors());
     //desplegar directorio publico
     this.app.use( express.static( path.resolve( __dirname, '../public' ) ) );
-    //cords
-    this.app.use(cors());
+ 
 
   }
   configurarSockets(){
