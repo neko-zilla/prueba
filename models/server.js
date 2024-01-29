@@ -4,7 +4,7 @@ const http = require("http");
 const socketio = require("socket.io");
 const path = require("path");
 const  Sockets  = require("./sockets");
-const Cors = require("cors");
+const cors = require("cors");
 
 class Server {
   constructor() {
@@ -21,7 +21,7 @@ class Server {
     //desplegar directorio publico
     this.app.use( express.static( path.resolve( __dirname, '../public' ) ) );
     //cords
-    this.app.use( cord() );
+    this.app.use(cors());
 
   }
   configurarSockets(){
